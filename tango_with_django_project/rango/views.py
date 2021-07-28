@@ -1,15 +1,16 @@
 from django.shortcuts import render
+from rango.models import Category
 
 from django.http import HttpResponse
 
 def index(request):
-    #construct a dictionary to pass to the template engine as its context.
-    #note the key boldmessage mathes to {{ boldmessage}} in the template!
+    #list of all categorie currently stored, ordered by number of likes (descending) retrieve top 5
+    category_list = Category.objects.order_by('-likes')[:5]
+    
+    context_dict = {}
     context_dict={'boldmessage': 'Crunchy, creamy, cookie, candy, cupcake!'}
+    context_dict['categories'] = category_list #place list in context dictionary
    
-    #return a rendered response to send to the client
-    #we make use of the shortcut function to make our lives easier
-    #note that the first parameter is the template we wish to use
     return render(request, 'rango/index.html', context=context_dict)
 
 def about(request):
