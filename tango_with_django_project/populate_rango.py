@@ -14,7 +14,7 @@ def populate():
         'url':'http://docs.python.org/3/tutorial/',
         'views': 76},
         {'title': 'How to Think like a Computer Scientist',
-        'url': 'http://www.greenteapress.comTthinkpython/',
+        'url': 'http://www.greenteapress.com/thinkpython/',
         'views': 69},
         {'title': 'Learn Python in 10 Minutes',
         'url': 'http://www.korokithakis.net/tutorials/python/',
@@ -36,8 +36,8 @@ def populate():
         'url':'http://bottlepy.org/docs/dev/',
         'views': 12},
         {'title': 'Flask',
-        'url': 'http://flask.pocoo.org/',
-        'views': 62}]
+        'url': 'http://flask.pocoo.org',
+        'views': 62} ]
     
     cats = {'Python': {'pages': python_pages, 'views': 128, 'likes':64},
             'Django': {'pages': django_pages, 'views': 64, 'likes':32},
